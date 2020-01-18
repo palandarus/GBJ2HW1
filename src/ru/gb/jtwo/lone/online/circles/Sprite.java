@@ -40,5 +40,10 @@ public class Sprite {
     }
     void update(GameCanvas canvas, float deltaTime) {}
     void render(GameCanvas canvas, Graphics g) {}
+    //Проверяем попадание точки x,y в эллипс, включая границы
+    protected boolean isInside(float x, float y){
+        if((Math.pow((double)(x-this.x),2)/(halfHeight*halfHeight)+Math.pow((double)(y-this.y),2)/(halfWidth*halfWidth))<=1) return true;
+        else return false;
+    }
 
 }

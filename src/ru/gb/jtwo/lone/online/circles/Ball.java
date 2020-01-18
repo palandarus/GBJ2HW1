@@ -3,7 +3,7 @@ package ru.gb.jtwo.lone.online.circles;
 import java.awt.*;
 
 public class Ball extends Sprite {
-    private final Color color = new Color (
+    public Color color = new Color (
             (int)(Math.random() * 255),
             (int)(Math.random() * 255),
             (int)(Math.random() * 255)
@@ -43,5 +43,13 @@ public class Ball extends Sprite {
         g.setColor(color);
         g.fillOval((int) getLeft(), (int) getTop(),
                 (int) getWidth(), (int) getHeight());
+    }
+
+    public void setColor() {
+        this.color = new Color (
+                (int)(Math.random() * 255),
+                (int)(Math.random() * 255),
+                (int)(Math.random() * 255)
+        );
     }
 }
