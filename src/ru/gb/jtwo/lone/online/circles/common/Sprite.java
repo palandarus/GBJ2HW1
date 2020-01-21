@@ -1,8 +1,8 @@
-package ru.gb.jtwo.lone.online.circles;
+package ru.gb.jtwo.lone.online.circles.common;
 
 import java.awt.*;
 
-public class Sprite {
+public class Sprite implements GameObject {
     protected float x;
     protected float y;
     protected float halfWidth;
@@ -38,12 +38,9 @@ public class Sprite {
     protected float getHeight() {
         return 2f * halfHeight;
     }
-    void update(GameCanvas canvas, float deltaTime) {}
-    void render(GameCanvas canvas, Graphics g) {}
-    //Проверяем попадание точки x,y в эллипс, включая границы
-    protected boolean isInside(float x, float y){
-        if((Math.pow((double)(x-this.x),2)/(halfHeight*halfHeight)+Math.pow((double)(y-this.y),2)/(halfWidth*halfWidth))<=1) return true;
-        else return false;
-    }
+    @Override
+    public void update(GameCanvas canvas, float deltaTime) {}
+    @Override
+    public void render(GameCanvas canvas, Graphics g) {}
 
 }
